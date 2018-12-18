@@ -1,0 +1,20 @@
+<!--div id="chat">
+  <app-chat-affichage [messages]="messages"></app-chat-affichage>
+</div-->
+
+<!--div id="chats">
+  <p>Liste des message</p>
+  <app-chat-element *ngFor="let message of messages" [message]="message"></app-chat-element>
+</div-->
+<div id="chat">
+  <app-chat-affichage [messages]="messages | async"></app-chat-affichage>
+</div>
+
+<div id="formulaire">
+  <!--app-chat-formulaire></app-chat-formulaire-->
+  <app-chat-formulaire (nouveauMessage)="gererNouveauMessage($event)"></app-chat-formulaire>
+</div>
+
+
+
+
